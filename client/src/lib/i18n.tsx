@@ -35,7 +35,7 @@ const translations: Translations = {
   // Product Showcase
   "product.badge": { en: "Voice AI Solution", ar: "حلول الذكاء الاصطناعي الصوتي" },
   "product.title.prefix": { en: "Your Intelligent ", ar: "وكيلك الصوتي " },
-  "product.title.suffix": { en: "Voice Agent", ar: "الذكية" },
+  "product.title.suffix": { en: "Voice Agent", ar: "الذكي" },
   "product.description": { en: "Transform your customer communication with localized, human-like voice AI agents. Automate calls, schedule appointments, and handle inquiries with natural-sounding conversations in your local dialect.", ar: "حول اتصالات العملاء مع وكلاء الذكاء الاصطناعي الصوتي المحليين. أتمتة المكالمات، وجدولة المواعيد، والتعامل مع الاستفسارات بمحادثات طبيعية بلهجتك المحلية." },
   "product.feature.automated": { en: "Automated Calls", ar: "مكالمات آلية" },
   "product.feature.natural": { en: "Natural Voice", ar: "صوت طبيعي" },
@@ -99,7 +99,7 @@ const translations: Translations = {
   "footer.col.services": { en: "Services", ar: "الخدمات" },
   "footer.col.products": { en: "Products", ar: "المنتجات" },
   "footer.col.contact": { en: "Contact", ar: "اتصل بنا" },
-  "footer.address": { en: "XVPG+4WH, Abdallah Ben Kaeb St., Amman, Jordan", ar: "XVPG+4WH، شارع عبدالله بن كعب، عمان، الأردن" },
+  "footer.address": { en: "Al-Madina Al-Monawara St 219, Amman, XVV9+7R", ar: "شارع المدينة المنورة 219، عمان، XVV9+7R" },
   "footer.product.voice": { en: "Voice Agent", ar: "الوكيل الصوتي" },
   "footer.product.ecommerce": { en: "eCommerce Solutions", ar: "حلول التجارة الإلكترونية" },
   "footer.product.pos": { en: "POS Integration", ar: "تكامل نقاط البيع" },
@@ -115,7 +115,7 @@ type I18nContextType = {
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>('ar');
 
   useEffect(() => {
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
