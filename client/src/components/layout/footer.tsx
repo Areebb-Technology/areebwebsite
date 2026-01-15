@@ -61,9 +61,22 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2 sm:gap-3">
                 <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-primary shrink-0" />
-                <a href="tel:+962777470302" className="hover:text-primary transition-colors">+962 777 470 302</a>
+                <a href="tel:+962777470302" className="hover:text-primary transition-colors" dir="ltr">+962 777 470 302</a>
               </li>
             </ul>
+            <div className="mt-4 sm:mt-6 rounded-lg overflow-hidden border border-white/10">
+              <iframe
+                src="https://www.google.com/maps?q=Al-Madina+Al-Monawara+St+219,+Amman,+Jordan,+XVV9%2B7R&output=embed"
+                width="100%"
+                height="200"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-40 sm:h-48 md:h-56"
+                title="Areeb Tech Location"
+              ></iframe>
+            </div>
           </div>
 
         </div>

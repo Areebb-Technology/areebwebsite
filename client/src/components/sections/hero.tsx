@@ -77,20 +77,20 @@ export function Hero() {
              {/* Gradient Divider Line */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid grid-cols-3 gap-2 sm:gap-6 md:gap-8">
               {[
                 { icon: Globe, title: t('hero.trust.global'), subtitle: t('hero.trust.global.desc') },
                 { icon: Zap, title: t('hero.trust.rapid'), subtitle: t('hero.trust.rapid.desc') },
                 { icon: Shield, title: t('hero.trust.secure'), subtitle: t('hero.trust.secure.desc') }
               ].map((item, i) => (
                 <div key={i} className="text-center group">
-                  <div className="flex justify-center mb-3 sm:mb-4 transition-transform duration-500 group-hover:-translate-y-2">
-                    <div className="p-2.5 sm:p-3 rounded-2xl bg-white/5 border border-white/10 group-hover:border-primary/50 group-hover:bg-primary/10 transition-colors shadow-[0_0_15px_rgba(0,0,0,0.2)] group-hover:shadow-[0_0_20px_rgba(132,204,22,0.2)]">
-                      <item.icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+                  <div className="flex justify-center mb-2 sm:mb-3 md:mb-4 transition-transform duration-500 group-hover:-translate-y-2">
+                    <div className="p-1.5 sm:p-2.5 md:p-3 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 group-hover:border-primary/50 group-hover:bg-primary/10 transition-colors shadow-[0_0_15px_rgba(0,0,0,0.2)] group-hover:shadow-[0_0_20px_rgba(132,204,22,0.2)]">
+                      <item.icon className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-primary" />
                     </div>
                   </div>
-                  <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-1">{item.title}</h4>
-                  <p className="text-xs sm:text-sm text-white/50 font-medium px-2">{item.subtitle}</p>
+                  <h4 className="text-sm sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-0.5 sm:mb-1">{item.title}</h4>
+                  <p className="text-[10px] sm:text-xs md:text-sm text-white/50 font-medium px-1 sm:px-2">{item.subtitle}</p>
                 </div>
               ))}
             </div>

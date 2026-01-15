@@ -38,13 +38,13 @@ function CTA() {
                   <div className="bg-white/5 p-3 rounded-full border border-white/10">
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-lg text-white/80">+962 777 470 302</span>
+                  <span className="text-lg text-white/80" dir="ltr">+962 777 470 302</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="bg-white/5 p-3 rounded-full border border-white/10">
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-lg text-white/80">XVPG+4WH, Amman, Jordan</span>
+                  <span className="text-lg text-white/80">{t('footer.address')}</span>
                 </div>
              </div>
           </div>
