@@ -3,11 +3,13 @@ import {
   Server, 
   Bot, 
   MessageSquare, 
-  Users, 
+  Users,
+  ArrowRight,
 } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { useI18n } from "@/lib/i18n";
+import { Link } from "wouter";
 
 export function Services() {
   const { t } = useI18n();
@@ -103,6 +105,16 @@ export function Services() {
               </Card>
             </motion.div>
           ))}
+          
+          {/* More Button */}
+          <motion.div variants={item} className="flex items-center justify-center">
+            <Link href="/services">
+              <button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full px-6 sm:px-8 py-3 sm:py-4 flex items-center gap-2 sm:gap-3 transition-all duration-300 hover:scale-105">
+                <span className="text-sm sm:text-base">{t('nav.more')}</span>
+                <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
+              </button>
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
     </section>

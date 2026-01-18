@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const publicDir = path.resolve(__dirname, '..', 'client', 'public');
 const assetsDir = path.resolve(__dirname, '..', 'attached_assets');
-const logoPath = path.join(assetsDir, 'Areeb_White-green_1768388319561.png');
+const logoPath = path.join(assetsDir, 'AREEB__1_-removebg-preview.png');
 
 if (!fs.existsSync(logoPath)) {
   console.error('Logo not found at:', logoPath);

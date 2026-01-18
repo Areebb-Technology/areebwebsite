@@ -11,10 +11,12 @@ interface Translations {
 
 const translations: Translations = {
   // Navigation
+  "nav.home": { en: "Home", ar: "الرئيسية" },
   "nav.services": { en: "Services", ar: "خدماتنا" },
   "nav.about": { en: "About", ar: "من نحن" },
   "nav.contact": { en: "Contact", ar: "اتصل بنا" },
   "nav.getStarted": { en: "Get Started", ar: "ابدأ الآن" },
+  "nav.more": { en: "More", ar: "المزيد" },
   "nav.privacy": { en: "Privacy Policy", ar: "سياسة الخصوصية" },
   "nav.terms": { en: "Terms of Service", ar: "شروط الخدمة" },
   "nav.rights": { en: "Areeb Technology. All rights reserved.", ar: "أريب للتكنولوجيا. جميع الحقوق محفوظة." },
@@ -52,8 +54,8 @@ const translations: Translations = {
   "services.title.suffix": { en: "Unleashed", ar: "بلا حدود" },
   "services.description": { en: "We specialize in high-performance digital solutions tailored to evolving market needs.", ar: "نحن متخصصون في الحلول الرقمية عالية الأداء المصممة لتلبية احتياجات السوق المتطورة." },
   "services.card.digital": { en: "Digital Transformation", ar: "التحول الرقمي" },
-  "services.card.digital.desc": { en: "Consulting and strategy to digitize processes, automate workflows, and drive innovation across your organization.", ar: "الاستشارات والاستراتيجيات لرقمنة العمليات، وأتمتة سير العمل، ودفع الابتكار عبر مؤسستك." },
-  "services.card.managed": { en: "IT Managed Services", ar: "خدمات تكنولوجيا المعلومات المدارة" },
+  "services.card.digital.desc": { en: "Consulting and strategy to digitize processes, automate workflows, and drive innovation across your organization.", ar: "الاستشارات والاستراتيجيات لأتمتة العمليات وسير العمل، ودفع الابتكار عبر مؤسستك." },
+  "services.card.managed": { en: "IT Managed Services", ar: "خدمات إدارة تكنولوجيا المعلومات" },
   "services.card.managed.desc": { en: "Reliable, 24/7 technical support, system maintenance, and infrastructure management to ensure business continuity.", ar: "دعم فني موثوق على مدار الساعة، وصيانة النظام، وإدارة البنية التحتية لضمان استمرارية العمل." },
   "services.card.ai": { en: "AI Tools & Solutions", ar: "أدوات وحلول الذكاء الاصطناعي" },
   "services.card.ai.desc": { en: "Deploy cutting-edge AI agents and automation tools to enhance efficiency and modernize operations.", ar: "نشر وكلاء الذكاء الاصطناعي المتطورين وأدوات الأتمتة لتعزيز الكفاءة وتحديث العمليات." },
@@ -61,10 +63,18 @@ const translations: Translations = {
   "services.card.omni.desc": { en: "Seamless customer support experiences across all channels, powered by human-like AI agents.", ar: "تجارب دعم عملاء سلسة عبر جميع القنوات، مدعومة بوكلاء ذكاء اصطناعي يشبهون البشر." },
   "services.card.outsource": { en: "Outsourcing & Staff Augmentation", ar: "التعهيد وزيادة الموظفين" },
   "services.card.outsource.desc": { en: "Scale your team with our skilled IT experts and developers to meet project demands and business goals.", ar: "وسع فريقك بخبراء ومطوري تكنولوجيا المعلومات المهرة لدينا لتلبية متطلبات المشروع وأهداف العمل." },
+  "services.card.pos": { en: "Point of Sale (POS) Solutions", ar: "حلول نقاط البيع" },
+  "services.card.pos.desc": { en: "Comprehensive POS systems integration and customization to streamline your retail operations and enhance customer checkout experience.", ar: "تكامل وتخصيص شامل لأنظمة نقاط البيع لتبسيط عمليات البيع بالتجزئة وتحسين تجربة دفع العملاء." },
+  "services.card.pos.feature.integration": { en: "Integration Solutions", ar: "حلول التكامل" },
+  "services.card.pos.feature.payment": { en: "Payment Processing", ar: "معالجة المدفوعات" },
+  "services.card.pos.feature.inventory": { en: "Inventory Management", ar: "إدارة المخزون" },
+  "services.card.pos.feature.reporting": { en: "Real-time Reporting", ar: "التقارير الفورية" },
+  "services.card.callcenter": { en: "Agent Call Center Solutions", ar: "حلول مراكز الاتصال" },
+  "services.card.callcenter.desc": { en: "Advanced call center solutions with AI-powered voice agents for automated customer support, appointment scheduling, and inquiry handling.", ar: "حلول متقدمة لمراكز الاتصال مع وكلاء صوت ذكاء اصطناعي لدعم العملاء الآلي، وجدولة المواعيد، والتعامل مع الاستفسارات." },
 
   // About Section
   "about.areeb.title": { en: "Areeb", ar: "أريب" },
-  "about.areeb.meaning": { en: "\"The intelligent, the wise, the skillful.\"", ar: "\"الذكي، العاقل، الماهر.\"" },
+  "about.areeb.meaning": { en: "\"The intelligent, the wise, the skillful.\"", ar: " الذكي، العاقل، الماهر " },
   "about.areeb.desc": { en: "Our name reflects our core philosophy. We don't just write code; we apply wisdom, foresight, and sharp intelligence to solve complex challenges.", ar: "اسمنا يعكس فلسفتنا الجوهرية. نحن لا نكتب الكود فقط؛ نحن نطبق الحكمة، وبعد النظر، والذكاء الحاد لحل التحديات المعقدة." },
   "about.feature.design": { en: "Intelligent Design", ar: "تصميم ذكي" },
   "about.feature.design.desc": { en: "Smart solutions that adapt to your business needs.", ar: "حلول ذكية تتكيف مع احتياجات عملك." },

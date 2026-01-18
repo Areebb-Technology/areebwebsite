@@ -32,7 +32,6 @@ export function About() {
                       </div>
                       <h4 className="text-xl sm:text-2xl font-bold text-white mb-2 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                         <span className="text-primary text-2xl sm:text-3xl">{t('about.areeb.title')}</span>
-                        <span className="text-white/60 text-base sm:text-lg font-normal">({t('about.areeb.meaning')})</span>
                       </h4>
                       <p className="text-white/80 italic font-medium mb-2 text-sm sm:text-base">
                         "{t('about.areeb.meaning')}"

@@ -10,6 +10,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { WaveBackground } from "@/components/ui/wave-background";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
+import { useEffect } from "react";
+import { useLocation } from "wouter";
+import { SEO } from "@/components/seo";
 
 function CTA() {
   const { t } = useI18n();
@@ -83,8 +86,44 @@ function CTA() {
 }
 
 export default function Home() {
+  const [location, setLocation] = useLocation();
+  const { language, t } = useI18n();
+
+  useEffect(() => {
+    // Handle hash navigation when coming from other pages
+    const hash = window.location.hash;
+    if (hash) {
+      const sectionId = hash.substring(1); // Remove the #
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  }, [location]);
+
+  const seoTitle = language === 'ar'
+    ? 'أريب تك | شركة تقنية معلومات وحلول ذكاء اصطناعي في الأردن'
+    : 'Areeb Tech | IT & AI Company in Jordan';
+  
+  const seoDescription = language === 'ar'
+    ? 'أريب تك - شركة تقنية معلومات وحلول ذكاء اصطناعي رائدة في الأردن. متخصصة في حلول البرمجيات، Odoo ERP، حلول مركز الاتصال، أنظمة نقاط البيع، والتحول الرقمي. أفضل شركات تقنية المعلومات في الأردن.'
+    : 'Areeb Tech - Leading IT and AI company in Jordan. Specializing in Software Solutions, Odoo ERP, Call Center solutions, Point of Sale (POS) systems, Digital Transformation, and AI-powered technology services. Best IT companies in Jordan.';
+  
+  const seoKeywords = language === 'ar'
+    ? 'شركات تقنية معلومات الأردن، شركات ذكاء اصطناعي الأردن، خدمات تقنية معلومات الأردن، خدمات ذكاء اصطناعي الأردن، حلول برمجيات، Odoo ERP، حلول مركز الاتصال، أنظمة نقاط البيع، التحول الرقمي، خدمات إدارة تكنولوجيا المعلومات'
+    : 'IT companies in Jordan, AI companies in Jordan, IT services Jordan, AI services Jordan, Software Solutions, Odoo ERP, Call Center solutions, Agent Call Center, Point of Sale, POS systems, Digital Transformation, IT Managed Services, Voice AI, AI Agents, Technology services Amman, Software development Jordan';
+
   return (
     <div className="min-h-screen bg-background font-sans relative">
+      <SEO 
+        title={seoTitle}
+        description={seoDescription}
+        keywords={seoKeywords}
+        canonicalUrl="https://www.areebb.com/"
+        language={language}
+      />
       <WaveBackground />
       <Navbar />
       <main>
