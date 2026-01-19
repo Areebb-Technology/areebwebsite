@@ -1,9 +1,41 @@
-import { Terminal, Github, Twitter, Linkedin, Mail, MapPin, Phone, Instagram, Facebook } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import logo from "@assets/Areeb_White-green_1768388319561.png";
 import { useI18n } from "@/lib/i18n";
+import { useLocation, Link } from "wouter";
+import { useCallback } from "react";
+import { socialMediaLinks } from "@/lib/social-media";
 
 export function Footer() {
   const { t } = useI18n();
+  const [location] = useLocation();
+
+  const scrollToService = useCallback((serviceId: string) => {
+    // Try to find the element on the current page
+    const element = document.getElementById(serviceId);
+    
+    if (element) {
+      // Element found, scroll to it smoothly
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50);
+      return;
+    }
+
+    // Element not found on current page, navigate to services page
+    // Services exist on both pages, but we'll navigate to services page for consistency
+    if (location !== '/services') {
+      window.location.href = `/services#${serviceId}`;
+    } else {
+      // Already on services page, element might not be rendered yet
+      // Wait a bit and try again
+      setTimeout(() => {
+        const element = document.getElementById(serviceId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 200);
+    }
+  }, [location]);
   return (
     <footer className="bg-black border-t border-white/10 pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-10">
       <div className="container mx-auto px-4 md:px-6">
@@ -21,30 +53,121 @@ export function Footer() {
               {t('footer.desc')}
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-white/40 hover:text-primary transition-colors"><Facebook className="h-4 w-4 sm:h-5 sm:w-5" /></a>
-              <a href="#" className="text-white/40 hover:text-primary transition-colors"><Instagram className="h-4 w-4 sm:h-5 sm:w-5" /></a>
-              <a href="#" className="text-white/40 hover:text-primary transition-colors"><Linkedin className="h-4 w-4 sm:h-5 sm:w-5" /></a>
-              <a href="#" className="text-white/40 hover:text-primary transition-colors"><Twitter className="h-4 w-4 sm:h-5 sm:w-5" /></a>
+              {socialMediaLinks.map((social, index) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={index}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.name}
+                    className="text-white/40 hover:text-primary transition-colors"
+                  >
+                    <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
           <div>
             <h4 className="text-white font-bold mb-4 sm:mb-6 text-sm sm:text-base">{t('footer.col.services')}</h4>
             <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm text-white/50">
-              <li><a href="#" className="hover:text-primary transition-colors block py-1">{t('services.card.digital')}</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors block py-1">{t('services.card.managed')}</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors block py-1">{t('services.card.ai')}</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors block py-1">{t('services.card.omni')}</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors block py-1">{t('services.card.outsource')}</a></li>
+              <li>
+                <a 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToService('service-digital');
+                  }}
+                  className="hover:text-primary transition-colors block py-1 cursor-pointer"
+                >
+                  {t('services.card.digital')}
+                </a>
+              </li>
+              <li>
+                <a 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToService('service-managed');
+                  }}
+                  className="hover:text-primary transition-colors block py-1 cursor-pointer"
+                >
+                  {t('services.card.managed')}
+                </a>
+              </li>
+              <li>
+                <a 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToService('service-ai');
+                  }}
+                  className="hover:text-primary transition-colors block py-1 cursor-pointer"
+                >
+                  {t('services.card.ai')}
+                </a>
+              </li>
+              <li>
+                <a 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToService('service-omni');
+                  }}
+                  className="hover:text-primary transition-colors block py-1 cursor-pointer"
+                >
+                  {t('services.card.omni')}
+                </a>
+              </li>
+              <li>
+                <a 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToService('service-outsource');
+                  }}
+                  className="hover:text-primary transition-colors block py-1 cursor-pointer"
+                >
+                  {t('services.card.outsource')}
+                </a>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-bold mb-4 sm:mb-6 text-sm sm:text-base">{t('footer.col.products')}</h4>
              <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm text-white/50">
-              <li><a href="#product" className="hover:text-primary transition-colors block py-1">{t('footer.product.voice')}</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors block py-1">{t('footer.product.ecommerce')}</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors block py-1">{t('footer.product.pos')}</a></li>
+              <li>
+                <a 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToService('service-callcenter');
+                  }}
+                  className="hover:text-primary transition-colors block py-1 cursor-pointer"
+                >
+                  {t('footer.product.voice')}
+                </a>
+              </li>
+              <li>
+                <a 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToService('service-ecommerce');
+                  }}
+                  className="hover:text-primary transition-colors block py-1 cursor-pointer"
+                >
+                  {t('footer.product.ecommerce')}
+                </a>
+              </li>
+              <li>
+                <a 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToService('service-pos');
+                  }}
+                  className="hover:text-primary transition-colors block py-1 cursor-pointer"
+                >
+                  {t('footer.product.pos')}
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -84,8 +207,8 @@ export function Footer() {
         <div className="border-t border-white/10 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm text-white/30 gap-4 sm:gap-0">
           <p>&copy; {new Date().getFullYear()} {t('nav.rights')}</p>
           <div className="flex space-x-6 sm:space-x-8">
-            <a href="#" className="hover:text-white transition-colors">{t('nav.privacy')}</a>
-            <a href="#" className="hover:text-white transition-colors">{t('nav.terms')}</a>
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">{t('nav.privacy')}</Link>
+            <Link href="/terms-of-service" className="hover:text-white transition-colors">{t('nav.terms')}</Link>
           </div>
         </div>
       </div>

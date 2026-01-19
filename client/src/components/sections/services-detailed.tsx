@@ -6,6 +6,7 @@ import {
   Users,
   CreditCard,
   PhoneCall,
+  ShoppingCart,
   ArrowRight,
   CheckCircle,
 } from "lucide-react";
@@ -20,35 +21,47 @@ export function ServicesDetailed() {
   // Regular services
   const regularServices = [
     {
+      id: 'service-digital',
       icon: Rocket,
       title: t('services.card.digital'),
       description: t('services.card.digital.desc')
     },
     {
+      id: 'service-managed',
       icon: Server,
       title: t('services.card.managed'),
       description: t('services.card.managed.desc')
     },
     {
+      id: 'service-ai',
       icon: Bot,
       title: t('services.card.ai'),
       description: t('services.card.ai.desc')
     },
     {
+      id: 'service-omni',
       icon: MessageSquare,
       title: t('services.card.omni'),
       description: t('services.card.omni.desc')
     },
     {
+      id: 'service-outsource',
       icon: Users,
       title: t('services.card.outsource'),
       description: t('services.card.outsource.desc')
+    },
+    {
+      id: 'service-ecommerce',
+      icon: ShoppingCart,
+      title: t('services.card.ecommerce'),
+      description: t('services.card.ecommerce.desc')
     }
   ];
 
   // Featured services (POS and Call Center) - displayed differently
   const featuredServices = [
     {
+      id: 'service-callcenter',
       icon: PhoneCall,
       title: t('services.card.callcenter'),
       description: t('services.card.callcenter.desc'),
@@ -62,6 +75,7 @@ export function ServicesDetailed() {
       ]
     },
     {
+      id: 'service-pos',
       icon: CreditCard,
       title: t('services.card.pos'),
       description: t('services.card.pos.desc'),
@@ -101,6 +115,8 @@ export function ServicesDetailed() {
           {regularServices.map((service, index) => (
             <motion.div
               key={index}
+              id={service.id}
+              className="scroll-mt-24"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -144,6 +160,8 @@ export function ServicesDetailed() {
             {featuredServices.map((service, index) => (
               <motion.div
                 key={index}
+                id={service.id}
+                className="scroll-mt-24"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.7 + index * 0.2 }}

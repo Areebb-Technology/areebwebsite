@@ -4,9 +4,26 @@ import { ServicesDetailed } from "@/components/sections/services-detailed";
 import { WaveBackground } from "@/components/ui/wave-background";
 import { SEO } from "@/components/seo";
 import { useI18n } from "@/lib/i18n";
+import { useEffect } from "react";
+import { useLocation } from "wouter";
 
 export default function ServicesPage() {
   const { language } = useI18n();
+  const [location] = useLocation();
+
+  useEffect(() => {
+    // Handle hash navigation when coming from other pages or direct link
+    const hash = window.location.hash;
+    if (hash) {
+      const sectionId = hash.substring(1); // Remove the #
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    }
+  }, [location]);
   
   const seoTitle = language === 'ar'
     ? 'خدماتنا | أريب تك | شركة تقنية معلومات وحلول ذكاء اصطناعي في الأردن'

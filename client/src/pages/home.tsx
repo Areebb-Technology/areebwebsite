@@ -8,14 +8,87 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { WaveBackground } from "@/components/ui/wave-background";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import { SEO } from "@/components/seo";
+import { useToast } from "@/hooks/use-toast";
 
 function CTA() {
   const { t } = useI18n();
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      // Check if response is actually JSON
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        const text = await response.text();
+        console.error('Non-JSON response:', text.substring(0, 200));
+        throw new Error('Server returned non-JSON response');
+      }
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: t('cta.form.success.title'),
+          description: t('cta.form.success.description'),
+          variant: "default",
+        });
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        toast({
+          title: t('cta.form.error.title'),
+          description: data.message || t('cta.form.error.description'),
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: t('cta.form.error.title'),
+        description: t('cta.form.error.description'),
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       {/* Background gradients */}
@@ -54,27 +127,81 @@ function CTA() {
 
           <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 shadow-2xl">
             <h3 className="text-2xl font-bold text-white mb-6">{t('cta.form.title')}</h3>
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-white/70">{t('cta.form.name')}</label>
-                  <Input placeholder={t('cta.form.name.ph')} className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus-visible:ring-primary" />
+                  <Input 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder={t('cta.form.name.ph')} 
+                    className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus-visible:ring-primary" 
+                    required
+                  />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-white/70">{t('cta.form.email')}</label>
-                  <Input placeholder={t('cta.form.email.ph')} type="email" className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus-visible:ring-primary" />
+                  <Input 
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder={t('cta.form.email.ph')} 
+                    className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus-visible:ring-primary" 
+                    required
+                  />
                 </div>
               </div>
               <div className="space-y-2">
+                <label className="text-sm font-medium text-white/70">{t('cta.form.phone')}</label>
+                <Input 
+                  name="phone"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder={t('cta.form.phone.ph')} 
+                  className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus-visible:ring-primary" 
+                />
+              </div>
+              <div className="space-y-2">
                  <label className="text-sm font-medium text-white/70">{t('cta.form.subject')}</label>
-                 <Input placeholder={t('cta.form.subject.ph')} className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus-visible:ring-primary" />
+                 <Input 
+                   name="subject"
+                   value={formData.subject}
+                   onChange={handleChange}
+                   placeholder={t('cta.form.subject.ph')} 
+                   className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus-visible:ring-primary" 
+                   required
+                 />
               </div>
               <div className="space-y-2">
                  <label className="text-sm font-medium text-white/70">{t('cta.form.message')}</label>
-                 <Textarea placeholder={t('cta.form.message.ph')} className="min-h-[120px] bg-white/5 border-white/10 text-white placeholder:text-white/30 focus-visible:ring-primary resize-none" />
+                 <Textarea 
+                   name="message"
+                   value={formData.message}
+                   onChange={handleChange}
+                   placeholder={t('cta.form.message.ph')} 
+                   className="min-h-[120px] bg-white/5 border-white/10 text-white placeholder:text-white/30 focus-visible:ring-primary resize-none" 
+                   required
+                 />
               </div>
-              <Button size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold">
-                {t('cta.form.submit')} <Send className="ml-2 w-4 h-4 rtl:mr-2 rtl:ml-0 rtl:rotate-180" />
+              <Button 
+                type="submit"
+                size="lg" 
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin rtl:mr-0 rtl:ml-2" />
+                    {t('cta.form.submitting') || 'Sending...'}
+                  </>
+                ) : (
+                  <>
+                    {t('cta.form.submit')} <Send className="ml-2 w-4 h-4 rtl:mr-2 rtl:ml-0 rtl:rotate-180" />
+                  </>
+                )}
               </Button>
             </form>
           </div>

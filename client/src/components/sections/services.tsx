@@ -4,6 +4,7 @@ import {
   Bot, 
   MessageSquare, 
   Users,
+  ShoppingCart,
   ArrowRight,
 } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -16,29 +17,40 @@ export function Services() {
 
   const services = [
     {
+      id: 'service-digital',
       icon: Rocket,
       title: t('services.card.digital'),
       description: t('services.card.digital.desc')
     },
     {
+      id: 'service-managed',
       icon: Server,
       title: t('services.card.managed'),
       description: t('services.card.managed.desc')
     },
     {
+      id: 'service-ai',
       icon: Bot,
       title: t('services.card.ai'),
       description: t('services.card.ai.desc')
     },
     {
+      id: 'service-omni',
       icon: MessageSquare,
       title: t('services.card.omni'),
       description: t('services.card.omni.desc')
     },
     {
+      id: 'service-outsource',
       icon: Users,
       title: t('services.card.outsource'),
       description: t('services.card.outsource.desc')
+    },
+    {
+      id: 'service-ecommerce',
+      icon: ShoppingCart,
+      title: t('services.card.ecommerce'),
+      description: t('services.card.ecommerce.desc')
     }
   ];
 
@@ -89,7 +101,7 @@ export function Services() {
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
         >
           {services.map((service, index) => (
-            <motion.div key={index} variants={item}>
+            <motion.div key={index} variants={item} id={service.id} className="scroll-mt-24">
               <Card className="glass-card border-white/5 bg-white/5 hover:bg-white/10 transition-all duration-300 group cursor-pointer h-full hover:scale-105">
                 <CardHeader className="p-6 sm:p-8">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-secondary/50 flex items-center justify-center mb-4 sm:mb-6 border border-white/5 group-hover:border-primary/50 group-hover:bg-primary/20 transition-all duration-300">
