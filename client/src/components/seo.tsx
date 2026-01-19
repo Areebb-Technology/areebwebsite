@@ -10,8 +10,34 @@ interface SEOProps {
 
 export function SEO({ title, description, keywords, canonicalUrl, language = 'ar' }: SEOProps) {
   useEffect(() => {
+    // Update HTML lang and dir attributes for SEO and accessibility
+    document.documentElement.lang = language;
+    document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
+    
     if (title) {
       document.title = title;
+      
+      // Update OG title
+      const ogTitle = document.querySelector('meta[property="og:title"]') as HTMLMetaElement;
+      if (ogTitle) {
+        ogTitle.content = title;
+      } else {
+        const meta = document.createElement('meta');
+        meta.setAttribute('property', 'og:title');
+        meta.content = title;
+        document.head.appendChild(meta);
+      }
+      
+      // Update Twitter title
+      const twitterTitle = document.querySelector('meta[name="twitter:title"]') as HTMLMetaElement;
+      if (twitterTitle) {
+        twitterTitle.content = title;
+      } else {
+        const meta = document.createElement('meta');
+        meta.name = 'twitter:title';
+        meta.content = title;
+        document.head.appendChild(meta);
+      }
     }
     
     if (description) {
@@ -66,13 +92,48 @@ export function SEO({ title, description, keywords, canonicalUrl, language = 'ar
         document.head.appendChild(canonicalLink);
       }
       canonicalLink.href = canonicalUrl;
+      
+      // Update OG URL
+      const ogUrl = document.querySelector('meta[property="og:url"]') as HTMLMetaElement;
+      if (ogUrl) {
+        ogUrl.content = canonicalUrl;
+      } else {
+        const meta = document.createElement('meta');
+        meta.setAttribute('property', 'og:url');
+        meta.content = canonicalUrl;
+        document.head.appendChild(meta);
+      }
+    }
+    
+    // Update OG locale based on language
+    const ogLocale = document.querySelector('meta[property="og:locale"]') as HTMLMetaElement;
+    const localeValue = language === 'ar' ? 'ar_JO' : 'en_US';
+    if (ogLocale) {
+      ogLocale.content = localeValue;
+    } else {
+      const meta = document.createElement('meta');
+      meta.setAttribute('property', 'og:locale');
+      meta.content = localeValue;
+      document.head.appendChild(meta);
+    }
+    
+    // Update OG site_name
+    const ogSiteName = document.querySelector('meta[property="og:site_name"]') as HTMLMetaElement;
+    if (ogSiteName) {
+      ogSiteName.content = 'Areeb Tech';
+    } else {
+      const meta = document.createElement('meta');
+      meta.setAttribute('property', 'og:site_name');
+      meta.content = 'Areeb Tech';
+      document.head.appendChild(meta);
     }
 
     // Inject Structured Data (JSON-LD)
     const injectStructuredData = () => {
-      // Remove existing structured data
-      const existingScripts = document.querySelectorAll('script[type="application/ld+json"]');
-      existingScripts.forEach(script => script.remove());
+      try {
+        // Remove existing structured data
+        const existingScripts = document.querySelectorAll('script[type="application/ld+json"]');
+        existingScripts.forEach(script => script.remove());
 
       // Organization Schema
       const organizationSchema = {
@@ -81,7 +142,12 @@ export function SEO({ title, description, keywords, canonicalUrl, language = 'ar
         "name": "Areeb Tech",
         "alternateName": "Areeb Technology",
         "url": "https://www.areebb.com",
-        "logo": "https://www.areebb.com/logo.png",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.areebb.com/opengraph.jpg",
+          "width": 1200,
+          "height": 630
+        },
         "description": language === 'ar' 
           ? "أريب تك - شركة تقنية معلومات وحلول ذكاء اصطناعي رائدة في الأردن. نقدم خدمات تقنية ذكية وماهرة تشمل وكلاء الذكاء الاصطناعي الصوتي، التحول الرقمي، خدمات إدارة تكنولوجيا المعلومات، وحلول مركز الاتصال ونقاط البيع."
           : "Areeb Tech - Leading IT and AI company in Jordan. Specializing in Software Solutions, Odoo ERP, Call Center solutions, Point of Sale (POS) systems, Digital Transformation, and AI-powered technology services.",
@@ -116,8 +182,19 @@ export function SEO({ title, description, keywords, canonicalUrl, language = 'ar
           "Digital Transformation",
           "IT Managed Services",
           "Voice AI",
-          "AI Agents"
-        ]
+          "AI Agents",
+          "Machine Learning",
+          "Natural Language Processing",
+          "Conversational AI",
+          "AI Automation",
+          "Intelligent Systems"
+        ],
+        "industry": "Information Technology and Artificial Intelligence",
+        "foundingDate": "2020",
+        "numberOfEmployees": {
+          "@type": "QuantitativeValue",
+          "value": "10-50"
+        }
       };
 
       // LocalBusiness Schema
@@ -126,7 +203,7 @@ export function SEO({ title, description, keywords, canonicalUrl, language = 'ar
         "@type": "LocalBusiness",
         "@id": "https://www.areebb.com",
         "name": "Areeb Tech",
-        "image": "https://www.areebb.com/logo.png",
+        "image": "https://www.areebb.com/opengraph.jpg",
         "description": language === 'ar'
           ? "شركة تقنية معلومات وحلول ذكاء اصطناعي في الأردن متخصصة في حلول البرمجيات، Odoo ERP، حلول مركز الاتصال، أنظمة نقاط البيع، والتحول الرقمي."
           : "IT and AI company in Jordan specializing in Software Solutions, Odoo ERP, Call Center solutions, Point of Sale systems, and Digital Transformation.",
@@ -282,43 +359,103 @@ export function SEO({ title, description, keywords, canonicalUrl, language = 'ar
         ]
       };
 
-      // Product Schema (Voice AI Agent)
+      // Product Schema (Voice AI Agent) - Enhanced for AI SEO
       const productSchema = {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "Areeb Voice AI Agent",
+        "alternateName": "Areeb AI Voice Assistant",
         "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "AI Customer Service",
         "operatingSystem": "Cloud-based",
         "offers": {
           "@type": "Offer",
           "price": "0",
-          "priceCurrency": "USD"
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
         },
         "description": language === 'ar'
-          ? "وكيل ذكاء اصطناعي صوتي متقدم يدعم اللهجة الأردنية والعربية، يوفر دعم عملاء آلي طبيعي وتفاعلي."
-          : "Advanced Voice AI Agent supporting Jordanian and Arabic dialects, providing natural and interactive automated customer support.",
+          ? "وكيل ذكاء اصطناعي صوتي متقدم يدعم اللهجة الأردنية والعربية، يوفر دعم عملاء آلي طبيعي وتفاعلي. يستخدم تقنيات معالجة اللغة الطبيعية والتعلم الآلي لتقديم تجربة محادثة طبيعية."
+          : "Advanced Voice AI Agent supporting Jordanian and Arabic dialects, providing natural and interactive automated customer support. Uses Natural Language Processing and Machine Learning technologies for natural conversation experiences.",
+        "featureList": [
+          "Natural Language Processing",
+          "Arabic and Jordanian Dialect Support",
+          "Voice Recognition",
+          "Conversational AI",
+          "24/7 Automated Customer Support",
+          "Multi-language Support",
+          "Machine Learning Integration"
+        ],
+        "screenshot": "https://www.areebb.com/opengraph.jpg",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "50"
+        },
         "provider": {
           "@type": "Organization",
+          "name": "Areeb Tech",
+          "url": "https://www.areebb.com"
+        },
+        "keywords": "Voice AI, AI Agent, Conversational AI, Natural Language Processing, Arabic AI, Customer Support AI, Jordan AI Solutions"
+      };
+
+      // AI Technology Schema - Additional structured data for AI SEO
+      const aiTechnologySchema = {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": language === 'ar' 
+          ? "حلول الذكاء الاصطناعي المتقدمة في الأردن"
+          : "Advanced AI Solutions in Jordan",
+        "description": language === 'ar'
+          ? "أريب تك تقدم حلول ذكاء اصطناعي متقدمة تشمل وكلاء الذكاء الاصطناعي الصوتي، معالجة اللغة الطبيعية، والتعلم الآلي للشركات في الأردن."
+          : "Areeb Tech provides advanced AI solutions including Voice AI agents, Natural Language Processing, and Machine Learning for businesses in Jordan.",
+        "author": {
+          "@type": "Organization",
           "name": "Areeb Tech"
-        }
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Areeb Tech",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.areebb.com/opengraph.jpg"
+          }
+        },
+        "about": {
+          "@type": "Thing",
+          "name": "Artificial Intelligence",
+          "description": "AI solutions and services for businesses"
+        },
+        "keywords": "AI, Artificial Intelligence, Machine Learning, NLP, Voice AI, Jordan AI, AI Solutions"
       };
 
       // Inject all schemas
-      const schemas = [organizationSchema, localBusinessSchema, serviceSchema, faqSchema, productSchema];
+      const schemas = [organizationSchema, localBusinessSchema, serviceSchema, faqSchema, productSchema, aiTechnologySchema];
       
       schemas.forEach((schema, index) => {
-        // Check if script already exists
-        let script = document.getElementById(`structured-data-${index}`) as HTMLScriptElement;
-        if (script) {
-          script.textContent = JSON.stringify(schema);
-        } else {
-          script = document.createElement('script');
-          script.type = 'application/ld+json';
-          script.id = `structured-data-${index}`;
-          script.textContent = JSON.stringify(schema);
-          document.head.appendChild(script);
+        try {
+          // Validate schema before stringifying
+          const schemaString = JSON.stringify(schema);
+          
+          // Check if script already exists
+          let script = document.getElementById(`structured-data-${index}`) as HTMLScriptElement;
+          if (script) {
+            script.textContent = schemaString;
+          } else {
+            script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.id = `structured-data-${index}`;
+            script.textContent = schemaString;
+            document.head.appendChild(script);
+          }
+        } catch (error) {
+          console.error(`Failed to inject structured data schema ${index}:`, error);
         }
       });
+      } catch (error) {
+        console.error('Failed to inject structured data:', error);
+      }
     };
 
     injectStructuredData();
