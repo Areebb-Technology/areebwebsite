@@ -108,7 +108,7 @@ function generateStructuredData(seoData: SEOData): string[] {
     }
   };
 
-  // Service Schema
+  // Service Catalog Schema (for Rich Snippets)
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -178,6 +178,191 @@ function generateStructuredData(seoData: SEOData): string[] {
     }
   };
 
+  // Individual AI Agent Call Center Service Schema (Rich Snippet Optimized)
+  const aiAgentCallCenterService = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": language === 'ar' ? "حلول مركز الاتصال بوكلاء الذكاء الاصطناعي" : "AI Agent Call Center Solutions",
+    "alternateName": "Voice AI Call Center",
+    "description": language === 'ar'
+      ? "حلول مركز اتصال متقدمة مدعومة بوكلاء الذكاء الاصطناعي الصوتي لدعم العملاء الآلي، جدولة المواعيد، والتعامل مع الاستفسارات. يدعم اللهجات الأردنية والعربية."
+      : "Advanced AI-powered call center solutions featuring Voice AI agents for automated customer support, appointment scheduling, and inquiry handling. Supports Jordanian and Arabic dialects with natural language processing.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Areeb Tech",
+      "url": "https://www.areebb.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.areebb.com/opengraph.jpg"
+      }
+    },
+    "serviceType": "Call Center Solution",
+    "category": "AI Customer Service",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Jordan",
+      "sameAs": "https://en.wikipedia.org/wiki/Jordan"
+    },
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceUrl": "https://www.areebb.com/services",
+      "servicePhone": "+962-777-470-302",
+      "serviceSmsNumber": "+962-777-470-302",
+      "availableLanguage": ["en", "ar"]
+    },
+    "audience": {
+      "@type": "BusinessAudience",
+      "audienceType": "Business",
+      "geographicArea": {
+        "@type": "Country",
+        "name": "Jordan"
+      }
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI Agent Call Center Features",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Voice AI Agents",
+            "description": "Natural language voice AI agents supporting Arabic and Jordanian dialects"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "24/7 Automated Support",
+            "description": "Round-the-clock automated customer support with AI agents"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Appointment Scheduling",
+            "description": "Intelligent appointment scheduling and calendar management"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Multi-language Support",
+            "description": "Support for Arabic, English, and Jordanian dialects"
+          }
+        }
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "25",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "Contact for pricing",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "price": "0",
+        "priceCurrency": "USD",
+        "valueAddedTaxIncluded": true
+      },
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.areebb.com/services",
+      "seller": {
+        "@type": "Organization",
+        "name": "Areeb Tech"
+      }
+    }
+  };
+
+  // Voice AI Agent Product Schema (Enhanced for Rich Snippets)
+  const voiceAIAgentProduct = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": language === 'ar' ? "وكيل أريب الصوتي للذكاء الاصطناعي" : "Areeb Voice AI Agent",
+    "alternateName": ["Areeb AI Voice Assistant", "Voice AI Agent", "Conversational AI Agent"],
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "AI Customer Service",
+    "operatingSystem": "Cloud-based",
+    "softwareVersion": "2.0",
+    "releaseNotes": language === 'ar'
+      ? "إصدار محدث مع دعم محسّن للهجات الأردنية وتحسينات معالجة اللغة الطبيعية"
+      : "Updated release with enhanced Jordanian dialect support and improved natural language processing",
+    "description": language === 'ar'
+      ? "وكيل ذكاء اصطناعي صوتي متقدم يدعم اللهجة الأردنية والعربية، يوفر دعم عملاء آلي طبيعي وتفاعلي. يستخدم تقنيات معالجة اللغة الطبيعية والتعلم الآلي لتقديم تجربة محادثة طبيعية مع العملاء على مدار الساعة."
+      : "Advanced Voice AI Agent supporting Jordanian and Arabic dialects, providing natural and interactive automated customer support. Uses Natural Language Processing and Machine Learning technologies for natural conversation experiences. Available 24/7 for automated customer service.",
+    "featureList": [
+      "Natural Language Processing (NLP)",
+      "Arabic and Jordanian Dialect Support",
+      "Voice Recognition and Synthesis",
+      "Conversational AI Technology",
+      "24/7 Automated Customer Support",
+      "Multi-language Support (Arabic, English)",
+      "Machine Learning Integration",
+      "Real-time Speech Processing",
+      "Context-aware Conversations",
+      "Automated Appointment Scheduling"
+    ],
+    "screenshot": "https://www.areebb.com/opengraph.jpg",
+    "softwareRequirements": "Internet connection, Web browser or API access",
+    "permissions": "Voice input, API access",
+    "browserRequirements": "Modern web browser with microphone support",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "50",
+      "bestRating": "5",
+      "worstRating": "1",
+      "reviewCount": "50"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.areebb.com/services",
+      "seller": {
+        "@type": "Organization",
+        "name": "Areeb Tech",
+        "url": "https://www.areebb.com"
+      },
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "0",
+        "priceCurrency": "USD",
+        "valueAddedTaxIncluded": true
+      }
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Areeb Tech",
+      "url": "https://www.areebb.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.areebb.com/opengraph.jpg"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+962-777-470-302",
+        "contactType": "Customer Service",
+        "email": "info@areebtech.com",
+        "availableLanguage": ["en", "ar"]
+      }
+    },
+    "keywords": "Voice AI, AI Agent, Conversational AI, Natural Language Processing, Arabic AI, Customer Support AI, Jordan AI Solutions, Voice Recognition, Speech Synthesis, AI Automation",
+    "inLanguage": ["ar", "en"],
+    "isAccessibleForFree": true,
+    "downloadUrl": "https://www.areebb.com/services",
+    "installUrl": "https://www.areebb.com/services"
+  };
+
   // FAQ Schema
   const faqSchema = {
     "@context": "https://schema.org",
@@ -236,45 +421,24 @@ function generateStructuredData(seoData: SEOData): string[] {
     ]
   };
 
-  // Product Schema (Voice AI Agent)
-  const productSchema = {
+  // BreadcrumbList Schema (for Rich Snippets navigation)
+  const breadcrumbSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Areeb Voice AI Agent",
-    "alternateName": "Areeb AI Voice Assistant",
-    "applicationCategory": "BusinessApplication",
-    "applicationSubCategory": "AI Customer Service",
-    "operatingSystem": "Cloud-based",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
-    },
-    "description": language === 'ar'
-      ? "وكيل ذكاء اصطناعي صوتي متقدم يدعم اللهجة الأردنية والعربية، يوفر دعم عملاء آلي طبيعي وتفاعلي. يستخدم تقنيات معالجة اللغة الطبيعية والتعلم الآلي لتقديم تجربة محادثة طبيعية."
-      : "Advanced Voice AI Agent supporting Jordanian and Arabic dialects, providing natural and interactive automated customer support. Uses Natural Language Processing and Machine Learning technologies for natural conversation experiences.",
-    "featureList": [
-      "Natural Language Processing",
-      "Arabic and Jordanian Dialect Support",
-      "Voice Recognition",
-      "Conversational AI",
-      "24/7 Automated Customer Support",
-      "Multi-language Support",
-      "Machine Learning Integration"
-    ],
-    "screenshot": "https://www.areebb.com/opengraph.jpg",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "50"
-    },
-    "provider": {
-      "@type": "Organization",
-      "name": "Areeb Tech",
-      "url": "https://www.areebb.com"
-    },
-    "keywords": "Voice AI, AI Agent, Conversational AI, Natural Language Processing, Arabic AI, Customer Support AI, Jordan AI Solutions"
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": language === 'ar' ? "الرئيسية" : "Home",
+        "item": "https://www.areebb.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": language === 'ar' ? "الخدمات" : "Services",
+        "item": "https://www.areebb.com/services"
+      }
+    ]
   };
 
   // AI Technology Schema
@@ -307,13 +471,16 @@ function generateStructuredData(seoData: SEOData): string[] {
     "keywords": "AI, Artificial Intelligence, Machine Learning, NLP, Voice AI, Jordan AI, AI Solutions"
   };
 
+  // Combine all schemas - Enhanced for Rich Snippets
   const schemas = [
     organizationSchema,
     localBusinessSchema,
     serviceSchema,
+    aiAgentCallCenterService,  // Individual service schema for Rich Snippets
+    voiceAIAgentProduct,        // Enhanced product schema
     faqSchema,
-    productSchema,
-    aiTechnologySchema
+    aiTechnologySchema,
+    breadcrumbSchema            // Navigation breadcrumbs
   ];
 
   return schemas.map(schema => JSON.stringify(schema));
