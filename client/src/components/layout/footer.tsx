@@ -45,7 +45,7 @@ export function Footer() {
             <div className="w-fit">
                <img 
                 src={logo} 
-                alt="Areeb Tech" 
+                alt="Areeb" 
                 className="h-8 sm:h-10 w-auto object-contain" 
               />
             </div>
@@ -180,11 +180,11 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2 sm:gap-3">
                 <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-primary shrink-0" />
-                <a href="mailto:info@areebtech.com" className="hover:text-primary transition-colors break-all">info@areebtech.com</a>
+                <a href="mailto:info@areebb.com" className="hover:text-primary transition-colors break-all">info@areebb.com</a>
               </li>
               <li className="flex items-center gap-2 sm:gap-3">
                 <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-primary shrink-0" />
-                <a href="tel:+962777470302" className="hover:text-primary transition-colors" dir="ltr">+962 777 470 302</a>
+                <a href="tel:+962799788261" className="hover:text-primary transition-colors" dir="ltr">+962 799 788 261</a>
               </li>
             </ul>
             <div className="mt-4 sm:mt-6 rounded-lg overflow-hidden border border-white/10">
@@ -197,7 +197,7 @@ export function Footer() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full h-40 sm:h-48 md:h-56"
-                title="Areeb Tech Location"
+                title="Areeb Location"
               ></iframe>
             </div>
           </div>

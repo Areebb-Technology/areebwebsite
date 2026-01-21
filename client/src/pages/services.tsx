@@ -26,8 +26,8 @@ export default function ServicesPage() {
   }, [location]);
   
   const seoTitle = language === 'ar'
-    ? 'خدماتنا | أريب تك | شركة تقنية معلومات وحلول ذكاء اصطناعي في الأردن'
-    : 'Our Services | Areeb Tech | IT & AI Company in Jordan';
+    ? 'خدماتنا | أريب | شركة تقنية معلومات وحلول ذكاء اصطناعي في الأردن'
+    : 'Our Services | Areeb | IT & AI Company in Jordan';
   
   const seoDescription = language === 'ar'
     ? 'اكتشف خدماتنا الشاملة: التحول الرقمي، إدارة تكنولوجيا المعلومات، حلول الذكاء الاصطناعي، المشاركة عبر قنوات متعددة، والتعهيد. حلول تقنية متطورة لتحويل أعمالك.'

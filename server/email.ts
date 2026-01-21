@@ -115,7 +115,7 @@ export async function sendContactNotification(data: ContactFormData): Promise<vo
   }
   const logoAttachment = getLogoAttachment();
   const logoHtml = logoAttachment 
-    ? `<img src="cid:areeb-logo" alt="Areeb Tech Logo" style="max-width: 150px; height: auto; margin: 0 auto 16px; display: block;" />`
+    ? `<img src="cid:areeb-logo" alt="Areeb Logo" style="max-width: 150px; height: auto; margin: 0 auto 16px; display: block;" />`
     : '';
 
   const html = `
@@ -305,7 +305,7 @@ export async function sendContactNotification(data: ContactFormData): Promise<vo
           </div>
           <div class="footer">
             ${logoHtml}
-            <p class="footer-text">This message was sent from the Areeb Tech website contact form.</p>
+            <p class="footer-text">This message was sent from the Areeb website contact form.</p>
             <div class="timestamp">Submitted at: ${new Date().toLocaleString()}</div>
           </div>
         </div>
@@ -325,13 +325,13 @@ Message:
 ${data.message}
 
 ---
-This message was sent from the Areeb Tech website contact form.
+This message was sent from the Areeb website contact form.
 Submitted at: ${new Date().toLocaleString()}
   `;
 
   const mailOptions: any = {
-    from: `"Areeb Tech Website" <${SMTP_FROM}>`,
-    to: 'info@areebtech.com', // Notification email - will receive form submissions
+    from: `"Areeb Website" <${SMTP_FROM}>`,
+    to: 'info@areebb.com', // Notification email - will receive form submissions
     replyTo: data.email, // Reply-to address set to user's email
     subject: `New Contact Form Submission - ${data.subject}`,
     text,
@@ -356,7 +356,7 @@ export async function sendContactConfirmation(data: ContactFormData): Promise<vo
   }
   const logoAttachment = getLogoAttachment();
   const logoHtml = logoAttachment 
-    ? `<img src="cid:areeb-logo" alt="Areeb Tech Logo" style="max-width: 150px; height: auto; margin: 0 auto 16px; display: block;" />`
+    ? `<img src="cid:areeb-logo" alt="Areeb Logo" style="max-width: 150px; height: auto; margin: 0 auto 16px; display: block;" />`
     : '';
 
   const html = `
@@ -486,7 +486,7 @@ export async function sendContactConfirmation(data: ContactFormData): Promise<vo
           <div class="content">
             <p class="greeting">Dear ${escapeHtml(data.name)},</p>
             
-            <p class="message-text">Thank you for contacting Areeb Tech. We have received your message and will get back to you as soon as possible.</p>
+            <p class="message-text">Thank you for contacting Areeb. We have received your message and will get back to you as soon as possible.</p>
             
             <div class="signature">
               Best Regards,<br>
@@ -506,7 +506,7 @@ export async function sendContactConfirmation(data: ContactFormData): Promise<vo
   const text = `
 Dear ${data.name},
 
-Thank you for contacting Areeb Tech. We have received your message and will get back to you as soon as possible.
+Thank you for contacting Areeb. We have received your message and will get back to you as soon as possible.
 
 Best Regards,
 Areeb Company
@@ -516,9 +516,9 @@ This is an automated confirmation email. Please do not reply to this message.
   `;
 
   const mailOptions: any = {
-    from: `"Areeb Tech" <${SMTP_FROM}>`,
+    from: `"Areeb" <${SMTP_FROM}>`,
     to: data.email,
-    subject: `Thank you for contacting Areeb Tech - ${data.subject}`,
+    subject: `Thank you for contacting Areeb - ${data.subject}`,
     text,
     html,
   };

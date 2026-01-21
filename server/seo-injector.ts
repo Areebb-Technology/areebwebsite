@@ -16,7 +16,7 @@ function generateStructuredData(seoData: SEOData): string[] {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Areeb Tech",
+    "name": "Areeb",
     "alternateName": "Areebb Technology",
     "url": "https://www.areebb.com",
     "logo": {
@@ -26,8 +26,8 @@ function generateStructuredData(seoData: SEOData): string[] {
       "height": 630
     },
     "description": language === 'ar' 
-      ? "أريب تك - شركة تقنية معلومات وحلول ذكاء اصطناعي رائدة في الأردن. نقدم خدمات تقنية ذكية وماهرة تشمل وكلاء الذكاء الاصطناعي الصوتي، التحول الرقمي، خدمات إدارة تكنولوجيا المعلومات، وحلول مركز الاتصال ونقاط البيع."
-      : "Areeb Tech - Leading IT and AI company in Jordan. Specializing in Software Solutions, Odoo ERP, Call Center solutions, Point of Sale (POS) systems, Digital Transformation, and AI-powered technology services.",
+      ? "أريب - شركة تقنية معلومات وحلول ذكاء اصطناعي رائدة في الأردن. نقدم خدمات تقنية ذكية وماهرة تشمل وكلاء الذكاء الاصطناعي الصوتي، التحول الرقمي، خدمات إدارة تكنولوجيا المعلومات، وحلول مركز الاتصال ونقاط البيع."
+      : "Areeb - Leading IT and AI company in Jordan. Specializing in Software Solutions, Odoo ERP, Call Center solutions, Point of Sale (POS) systems, Digital Transformation, and AI-powered technology services.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Al-Madina Al-Monawara St 219",
@@ -37,9 +37,9 @@ function generateStructuredData(seoData: SEOData): string[] {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+962-777-470-302",
+      "telephone": "+962-799-788-261",
       "contactType": "Customer Service",
-      "email": "info@areebtech.com",
+      "email": "info@areebb.com",
       "areaServed": "JO",
       "availableLanguage": ["en", "ar"]
     },
@@ -79,7 +79,7 @@ function generateStructuredData(seoData: SEOData): string[] {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://www.areebb.com",
-    "name": "Areeb Tech",
+    "name": "Areeb",
     "image": "https://www.areebb.com/opengraph.jpg",
     "description": language === 'ar'
       ? "شركة تقنية معلومات وحلول ذكاء اصطناعي في الأردن متخصصة في حلول البرمجيات، Odoo ERP، حلول مركز الاتصال، أنظمة نقاط البيع، والتحول الرقمي."
@@ -98,7 +98,7 @@ function generateStructuredData(seoData: SEOData): string[] {
       "longitude": 35.8800
     },
     "url": "https://www.areebb.com",
-    "telephone": "+962-777-470-302",
+    "telephone": "+962-799-788-261",
     "priceRange": "$$",
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
@@ -115,7 +115,7 @@ function generateStructuredData(seoData: SEOData): string[] {
     "serviceType": "IT Services",
     "provider": {
       "@type": "Organization",
-      "name": "Areeb Tech",
+      "name": "Areeb",
       "url": "https://www.areebb.com"
     },
     "areaServed": {
@@ -189,7 +189,7 @@ function generateStructuredData(seoData: SEOData): string[] {
       : "Advanced AI-powered call center solutions featuring Voice AI agents for automated customer support, appointment scheduling, and inquiry handling. Supports Jordanian and Arabic dialects with natural language processing.",
     "provider": {
       "@type": "Organization",
-      "name": "Areeb Tech",
+      "name": "Areeb",
       "url": "https://www.areebb.com",
       "logo": {
         "@type": "ImageObject",
@@ -206,8 +206,8 @@ function generateStructuredData(seoData: SEOData): string[] {
     "availableChannel": {
       "@type": "ServiceChannel",
       "serviceUrl": "https://www.areebb.com/services",
-      "servicePhone": "+962-777-470-302",
-      "serviceSmsNumber": "+962-777-470-302",
+      "servicePhone": "+962-799-788-261",
+      "serviceSmsNumber": "+962-799-788-261",
       "availableLanguage": ["en", "ar"]
     },
     "audience": {
@@ -277,7 +277,7 @@ function generateStructuredData(seoData: SEOData): string[] {
       "url": "https://www.areebb.com/services",
       "seller": {
         "@type": "Organization",
-        "name": "Areeb Tech"
+        "name": "Areeb"
       }
     }
   };
@@ -330,7 +330,7 @@ function generateStructuredData(seoData: SEOData): string[] {
       "url": "https://www.areebb.com/services",
       "seller": {
         "@type": "Organization",
-        "name": "Areeb Tech",
+        "name": "Areeb",
         "url": "https://www.areebb.com"
       },
       "priceSpecification": {
@@ -342,7 +342,7 @@ function generateStructuredData(seoData: SEOData): string[] {
     },
     "provider": {
       "@type": "Organization",
-      "name": "Areeb Tech",
+      "name": "Areeb",
       "url": "https://www.areebb.com",
       "logo": {
         "@type": "ImageObject",
@@ -350,9 +350,9 @@ function generateStructuredData(seoData: SEOData): string[] {
       },
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+962-777-470-302",
+        "telephone": "+962-799-788-261",
         "contactType": "Customer Service",
-        "email": "info@areebtech.com",
+        "email": "info@areebb.com",
         "availableLanguage": ["en", "ar"]
       }
     },
@@ -374,8 +374,8 @@ function generateStructuredData(seoData: SEOData): string[] {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": language === 'ar' 
-            ? "أريب تك هي شركة تقنية معلومات رائدة في الأردن متخصصة في حلول البرمجيات، التحول الرقمي، خدمات إدارة تكنولوجيا المعلومات، وحلول الذكاء الاصطناعي."
-            : "Areeb Tech is a leading IT company in Jordan specializing in Software Solutions, Digital Transformation, IT Managed Services, and AI solutions. Based in Amman, we provide comprehensive technology services to businesses across Jordan."
+            ? "أريب هي شركة تقنية معلومات رائدة في الأردن متخصصة في حلول البرمجيات، التحول الرقمي، خدمات إدارة تكنولوجيا المعلومات، وحلول الذكاء الاصطناعي."
+            : "Areeb is a leading IT company in Jordan specializing in Software Solutions, Digital Transformation, IT Managed Services, and AI solutions. Based in Amman, we provide comprehensive technology services to businesses across Jordan."
         }
       },
       {
@@ -384,8 +384,8 @@ function generateStructuredData(seoData: SEOData): string[] {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": language === 'ar'
-            ? "أريب تك تقدم حلول ذكاء اصطناعي متقدمة بما في ذلك وكلاء الذكاء الاصطناعي الصوتي، وأدوات الذكاء الاصطناعي، وأتمتة ذكية للشركات في الأردن."
-            : "Areeb Tech provides advanced AI solutions including Voice AI agents, AI tools, and intelligent automation for businesses in Jordan. Our AI-powered services help companies automate processes and enhance customer experiences."
+            ? "أريب تقدم حلول ذكاء اصطناعي متقدمة بما في ذلك وكلاء الذكاء الاصطناعي الصوتي، وأدوات الذكاء الاصطناعي، وأتمتة ذكية للشركات في الأردن."
+            : "Areeb provides advanced AI solutions including Voice AI agents, AI tools, and intelligent automation for businesses in Jordan. Our AI-powered services help companies automate processes and enhance customer experiences."
         }
       },
       {
@@ -394,8 +394,8 @@ function generateStructuredData(seoData: SEOData): string[] {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": language === 'ar'
-            ? "أريب تك توفر حلول مركز الاتصال المتقدمة المدعومة بالذكاء الاصطناعي لدعم العملاء الآلي، التوجيه الفعال، وتجربة عملاء محسنة في الأردن."
-            : "Areeb Tech offers advanced AI-powered call center solutions in Jordan. Our Agent Call Center Solutions provide automated customer support, efficient routing, and enhanced customer experience using Voice AI technology."
+            ? "أريب توفر حلول مركز الاتصال المتقدمة المدعومة بالذكاء الاصطناعي لدعم العملاء الآلي، التوجيه الفعال، وتجربة عملاء محسنة في الأردن."
+            : "Areeb offers advanced AI-powered call center solutions in Jordan. Our Agent Call Center Solutions provide automated customer support, efficient routing, and enhanced customer experience using Voice AI technology."
         }
       },
       {
@@ -404,8 +404,8 @@ function generateStructuredData(seoData: SEOData): string[] {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": language === 'ar'
-            ? "أريب تك تقدم حلول نقاط البيع الشاملة مع التكامل والتخصيص لتبسيط عمليات البيع بالتجزئة وتحسين تجربة دفع العملاء في الأردن."
-            : "Areeb Tech provides comprehensive Point of Sale (POS) solutions in Jordan. Our POS systems include integration solutions, payment processing, inventory management, and real-time reporting for retail and hospitality businesses."
+            ? "أريب تقدم حلول نقاط البيع الشاملة مع التكامل والتخصيص لتبسيط عمليات البيع بالتجزئة وتحسين تجربة دفع العملاء في الأردن."
+            : "Areeb provides comprehensive Point of Sale (POS) solutions in Jordan. Our POS systems include integration solutions, payment processing, inventory management, and real-time reporting for retail and hospitality businesses."
         }
       },
       {
@@ -414,8 +414,8 @@ function generateStructuredData(seoData: SEOData): string[] {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": language === 'ar'
-            ? "أريب تك توفر خدمات التحول الرقمي الشاملة في الأردن تشمل الاستشارات والاستراتيجيات لأتمتة العمليات وسير العمل، ودفع الابتكار عبر المؤسسات."
-            : "Areeb Tech offers comprehensive Digital Transformation services in Jordan including consulting and strategy to digitize processes, automate workflows, and drive innovation across organizations."
+            ? "أريب توفر خدمات التحول الرقمي الشاملة في الأردن تشمل الاستشارات والاستراتيجيات لأتمتة العمليات وسير العمل، ودفع الابتكار عبر المؤسسات."
+            : "Areeb offers comprehensive Digital Transformation services in Jordan including consulting and strategy to digitize processes, automate workflows, and drive innovation across organizations."
         }
       }
     ]
@@ -449,15 +449,15 @@ function generateStructuredData(seoData: SEOData): string[] {
       ? "حلول الذكاء الاصطناعي المتقدمة في الأردن"
       : "Advanced AI Solutions in Jordan",
     "description": language === 'ar'
-      ? "أريب تك تقدم حلول ذكاء اصطناعي متقدمة تشمل وكلاء الذكاء الاصطناعي الصوتي، معالجة اللغة الطبيعية، والتعلم الآلي للشركات في الأردن."
-      : "Areeb Tech provides advanced AI solutions including Voice AI agents, Natural Language Processing, and Machine Learning for businesses in Jordan.",
+      ? "أريب تقدم حلول ذكاء اصطناعي متقدمة تشمل وكلاء الذكاء الاصطناعي الصوتي، معالجة اللغة الطبيعية، والتعلم الآلي للشركات في الأردن."
+      : "Areeb provides advanced AI solutions including Voice AI agents, Natural Language Processing, and Machine Learning for businesses in Jordan.",
     "author": {
       "@type": "Organization",
-      "name": "Areeb Tech"
+      "name": "Areeb"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Areeb Tech",
+      "name": "Areeb",
       "logo": {
         "@type": "ImageObject",
         "url": "https://www.areebb.com/opengraph.jpg"
@@ -512,7 +512,7 @@ function generateMetaTags(seoData: SEOData): string {
   metaTags.push(`<meta property="og:description" content="${escapeHtml(description)}">`);
   metaTags.push(`<meta property="og:url" content="${canonicalUrl}">`);
   metaTags.push(`<meta property="og:type" content="website">`);
-  metaTags.push(`<meta property="og:site_name" content="Areeb Tech">`);
+  metaTags.push(`<meta property="og:site_name" content="Areeb">`);
   if (ogImage) {
     metaTags.push(`<meta property="og:image" content="${ogImage}">`);
     metaTags.push(`<meta property="og:image:width" content="1200">`);

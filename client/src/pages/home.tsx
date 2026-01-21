@@ -108,13 +108,13 @@ function CTA() {
                   <div className="bg-white/5 p-3 rounded-full border border-white/10">
                     <Mail className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-lg text-white/80">info@areebtech.com</span>
+                  <span className="text-lg text-white/80">info@areebb.com</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="bg-white/5 p-3 rounded-full border border-white/10">
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-lg text-white/80" dir="ltr">+962 777 470 302</span>
+                  <span className="text-lg text-white/80" dir="ltr">+962 799 788 261</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="bg-white/5 p-3 rounded-full border border-white/10">
@@ -231,12 +231,12 @@ export default function Home() {
   }, [location]);
 
   const seoTitle = language === 'ar'
-    ? 'أريب تك | شركة تقنية معلومات وحلول ذكاء اصطناعي في الأردن'
-    : 'Areeb Tech | IT & AI Company in Jordan';
+    ? 'أريب | شركة تقنية معلومات وحلول ذكاء اصطناعي في الأردن'
+    : 'Areeb | IT & AI Company in Jordan';
   
   const seoDescription = language === 'ar'
-    ? 'أريب تك - شركة تقنية معلومات وحلول ذكاء اصطناعي رائدة في الأردن. متخصصة في حلول البرمجيات، Odoo ERP، حلول مركز الاتصال، أنظمة نقاط البيع، والتحول الرقمي. أفضل شركات تقنية المعلومات في الأردن.'
-    : 'Areeb Tech - Leading IT and AI company in Jordan. Specializing in Software Solutions, Odoo ERP, Call Center solutions, Point of Sale (POS) systems, Digital Transformation, and AI-powered technology services. Best IT companies in Jordan.';
+    ? 'أريب - شركة تقنية معلومات وحلول ذكاء اصطناعي رائدة في الأردن. متخصصة في حلول البرمجيات، Odoo ERP، حلول مركز الاتصال، أنظمة نقاط البيع، والتحول الرقمي. أفضل شركات تقنية المعلومات في الأردن.'
+    : 'Areeb - Leading IT and AI company in Jordan. Specializing in Software Solutions, Odoo ERP, Call Center solutions, Point of Sale (POS) systems, Digital Transformation, and AI-powered technology services. Best IT companies in Jordan.';
   
   const seoKeywords = language === 'ar'
     ? 'شركات تقنية معلومات الأردن، شركات ذكاء اصطناعي الأردن، خدمات تقنية معلومات الأردن، خدمات ذكاء اصطناعي الأردن، حلول برمجيات، Odoo ERP، حلول مركز الاتصال، أنظمة نقاط البيع، التحول الرقمي، خدمات إدارة تكنولوجيا المعلومات'

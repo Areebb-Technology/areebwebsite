@@ -111,7 +111,7 @@ export default function TermsOfServicePage() {
               <p className="mb-4">{t('terms.section12.content')}</p>
               <p className="mt-4">
                 <strong className="text-white">{t('terms.section12.contact')}:</strong><br />
-                <a href="mailto:info@areebtech.com" className="text-primary hover:underline">info@areebtech.com</a>
+                <a href="mailto:info@areebb.com" className="text-primary hover:underline">info@areebb.com</a>
               </p>
             </section>
 

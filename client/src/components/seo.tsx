@@ -138,11 +138,11 @@ export function SEO({ title, description, keywords, canonicalUrl, language = 'ar
     // Update OG site_name
     const ogSiteName = document.querySelector('meta[property="og:site_name"]') as HTMLMetaElement;
     if (ogSiteName) {
-      ogSiteName.content = 'Areeb Tech';
+      ogSiteName.content = 'Areeb';
     } else {
       const meta = document.createElement('meta');
       meta.setAttribute('property', 'og:site_name');
-      meta.content = 'Areeb Tech';
+        meta.content = 'Areeb';
       document.head.appendChild(meta);
     }
 

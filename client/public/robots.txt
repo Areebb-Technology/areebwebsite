@@ -1,4 +1,4 @@
-# robots.txt for Areeb Tech
+# robots.txt for Areeb
 # https://www.areebb.com/robots.txt
 
 User-agent: *

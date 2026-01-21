@@ -94,7 +94,7 @@ const translations: Translations = {
   // CTA Section
   "cta.title.prefix": { en: "Ready to ", ar: "مستعد " },
   "cta.title.suffix": { en: "Innovate?", ar: "للابتكار؟" },
-  "cta.desc": { en: "Let's discuss how Areeb Tech can help transform your business with our cutting-edge IT solutions.", ar: "دعنا نناقش كيف يمكن لأريب تك المساعدة في تحويل عملك من خلال حلولنا التقنية المتطورة." },
+  "cta.desc": { en: "Let's discuss how Areeb can help transform your business with our cutting-edge IT solutions.", ar: "دعنا نناقش كيف يمكن لأريب المساعدة في تحويل عملك من خلال حلولنا التقنية المتطورة." },
   "cta.form.title": { en: "Send us a message", ar: "أرسل لنا رسالة" },
   "cta.form.name": { en: "Name", ar: "الاسم" },
   "cta.form.name.ph": { en: "John Doe", ar: "الاسم الكامل" },
@@ -124,8 +124,8 @@ const translations: Translations = {
   "footer.product.pos": { en: "POS Integration", ar: "تكامل نقاط البيع" },
 
   // Privacy Policy
-  "privacy.seo.title": { en: "Privacy Policy | Areeb Tech", ar: "سياسة الخصوصية | أريب تك" },
-  "privacy.seo.description": { en: "Read our privacy policy to understand how Areeb Tech collects, uses, and protects your personal information.", ar: "اقرأ سياسة الخصوصية الخاصة بنا لفهم كيفية جمع أريب تك واستخدامها وحماية معلوماتك الشخصية." },
+  "privacy.seo.title": { en: "Privacy Policy | Areeb", ar: "سياسة الخصوصية | أريب" },
+  "privacy.seo.description": { en: "Read our privacy policy to understand how Areeb collects, uses, and protects your personal information.", ar: "اقرأ سياسة الخصوصية الخاصة بنا لفهم كيفية جمع أريب واستخدامها وحماية معلوماتك الشخصية." },
   "privacy.title": { en: "Privacy Policy", ar: "سياسة الخصوصية" },
   "privacy.lastUpdated": { en: "Last Updated", ar: "آخر تحديث" },
   "privacy.lastUpdatedDate": { en: "January 2025", ar: "يناير 2025" },
@@ -166,8 +166,8 @@ const translations: Translations = {
   "privacy.section11.contact": { en: "Email", ar: "البريد الإلكتروني" },
 
   // Terms of Service
-  "terms.seo.title": { en: "Terms of Service | Areeb Tech", ar: "شروط الخدمة | أريب تك" },
-  "terms.seo.description": { en: "Read our terms of service to understand the rules and guidelines for using Areeb Tech's services and website.", ar: "اقرأ شروط الخدمة الخاصة بنا لفهم القواعد والإرشادات لاستخدام خدمات أريب تك وموقعه الإلكتروني." },
+  "terms.seo.title": { en: "Terms of Service | Areeb", ar: "شروط الخدمة | أريب" },
+  "terms.seo.description": { en: "Read our terms of service to understand the rules and guidelines for using Areeb's services and website.", ar: "اقرأ شروط الخدمة الخاصة بنا لفهم القواعد والإرشادات لاستخدام خدمات أريب وموقعه الإلكتروني." },
   "terms.title": { en: "Terms of Service", ar: "شروط الخدمة" },
   "terms.lastUpdated": { en: "Last Updated", ar: "آخر تحديث" },
   "terms.lastUpdatedDate": { en: "January 2025", ar: "يناير 2025" },

@@ -118,7 +118,7 @@ export default function PrivacyPolicyPage() {
               <p className="mb-4">{t('privacy.section11.content')}</p>
               <p className="mt-4">
                 <strong className="text-white">{t('privacy.section11.contact')}:</strong><br />
-                <a href="mailto:info@areebtech.com" className="text-primary hover:underline">info@areebtech.com</a>
+                <a href="mailto:info@areebb.com" className="text-primary hover:underline">info@areebb.com</a>
               </p>
             </section>
 

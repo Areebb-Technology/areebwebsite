@@ -15,16 +15,16 @@ export interface SocialMediaLink {
 
 // Add your social media links here
 export const socialMediaLinks: SocialMediaLink[] = [
-//   {
-//     name: "Facebook",
-//     icon: Facebook,
-//     url: "#", // Replace with your Facebook page URL
-//   },
-//   {
-//     name: "Instagram",
-//     icon: Instagram,
-//     url: "#", // Replace with your Instagram profile URL
-//   },
+  {
+    name: "Facebook",
+    icon: Facebook,
+    url: "https://www.facebook.com/profile.php?id=61586711587600", // Replace with your Facebook page URL
+  },
+  {
+    name: "Instagram",
+    icon: Instagram,
+    url: "https://www.instagram.com/areebai5/", // Replace with your Instagram profile URL
+  },
   {
     name: "LinkedIn",
     icon: Linkedin,
